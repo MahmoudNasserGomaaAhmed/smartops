@@ -1,0 +1,328 @@
+body {
+  margin: 0;
+  font-family: 'Inter', 'Cairo', sans-serif;
+
+  margin: 0;
+ /*   background: #1a1a2e; /* خلي الخلفية داكنة عشان تظهر الفقاعات */
+
+  background: #323255; /* خلي الخلفية داكنة عشان تظهر الفقاعات */
+  color: hsl(212, 30%, 89%);
+  position: relative; /* مهم لتحديد الطبقات */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  background: #0a2540;
+  color: #fff;
+  position: sticky; /* يبقى ثابت عند التمرير */
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+header .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+header .nav-links a:hover {
+  color: #2dd4bf;
+}
+
+button#langToggle {
+  background: #2dd4bf;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+button {
+  background: #2dd4bf;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 { font-size: 40px; margin-bottom: 10px;color: #fff; }
+.hero p { font-size: 18px; opacity: 0.8; }
+
+.contact h3 {
+  text-align: center; /* العنوان في الوسط */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.section-carousel h3 {
+  text-align: center; /* العنوان في الوسط */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+/* Services Overview */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+}
+
+.card {
+    
+  background: #fff;
+    color: rgb(16, 14, 19);
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  transition: transform .2s ease;
+}
+.card:hover { transform: translateY(-5px); }
+.card i { font-size: 36px; margin-bottom: 15px; color: #0a2540; }
+
+.portfolio {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.portfolio h3 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.project {
+      color: rgb(10, 10, 12);
+
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project span {
+  display: inline-block;
+  font-size: 13px;
+  background: #e5f9f6;
+  color: #0a2540;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.project h4 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.project p {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.project iframe {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* Contact Form */
+.contact form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; padding-bottom: 50px;}
+.contact input, .contact textarea { padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-family: inherit; }
+.contact button { background: #0a2540; color: #fff; padding: 12px; border-radius: 8px; cursor: pointer; }
+
+/* WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.3);
+  z-index: 999;
+}
+
+/* Section Loop أصغر ارتفاع */
+.section-carousel {
+  padding: 20px 15px;      /* تصغير المسافة العلوية والسفلية */
+  max-height: 350px;       /* أقصى ارتفاع للـ Section */
+  overflow: hidden;      
+  width: 85%; 
+    margin: 0 auto;          /* يجعل Section في الوسط دائمًا */
+  text-align: center; /* يخفي أي محتوى زائد */
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.section-carousel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slides أصغر */
+.swiper-slide {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.swiper-slide img {
+  max-height: 150px;       /* حجم الصورة مصغر */
+  width: 100%;
+  object-fit: contain;      /* يظهر الصورة كاملة بدون قص */
+  border-radius: 12px;
+}
+
+
+/* تصغير الأسهم */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 25px;
+  height: 25px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px;
+}
+
+#about {
+  padding: 100px 30px;   /* Padding مشابه لبقية Sections */
+  text-align: center; 
+  max-width: 800px;     /* لتقليل عرض الفقرة */
+  margin: 0 auto;       /* لضبطها في المنتصف */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#about h3 {
+  font-size: 28px;      /* حجم العنوان مشابه لبقية Sections */
+  margin-bottom: 20px;
+}
+
+/* تأثير بسيط عند المرور على Cards و Projects */
+.card, .project {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover, .project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.project img {
+  transition: transform 0.4s ease;
+}
+
+.project img:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Container */
+.bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* لتجنب التأثير على التفاعل */
+  overflow: hidden;
+  z-index: 0; /* خلف كل العناصر */
+}
+
+/* فقاعات */
+.bubbles span {
+  position: absolute;
+  bottom: -100px;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  animation: rise 10s linear infinite;
+  left: calc(10% * var(--i));
+  animation-delay: calc(1s * var(--i));
+}
+
+/* تحريك الفقاعات */
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* تخصيص لكل فقاعه */
+.bubbles span:nth-child(1){--i:1;}
+.bubbles span:nth-child(2){--i:2;}
+.bubbles span:nth-child(3){--i:3;}
+.bubbles span:nth-child(4){--i:4;}
+.bubbles span:nth-child(5){--i:5;}
+.bubbles span:nth-child(6){--i:6;}
+.bubbles span:nth-child(7){--i:7;}
+.bubbles span:nth-child(8){--i:8;}
+.bubbles span:nth-child(9){--i:9;}
+.bubbles span:nth-child(10){--i:10;}
+
+/* Footer */
+footer { background: #0a2540; color: #fff; text-align: center; padding: 20px; }
