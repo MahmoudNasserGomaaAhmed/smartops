@@ -21,10 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
     projects = [
       {catEn:"ERPNext", catAr:"ERPNext", titleEn:"ERP Implementation", titleAr:"تطبيق ERP", descEn:"Full ERP solution", descAr:"حل ERP متكامل", media:"assets/images/demo3.jpg"},
       {catEn:"Power BI", catAr:"Power BI", titleEn:"Sales Dashboard", titleAr:"لوحة متابعة المبيعات", descEn:"Interactive dashboards", descAr:"لوحات تفاعلية", media:"assets/images/demo1.jpg"},
-      {catEn:"Automation", catAr:"الأتمتة", titleEn:"Workflow Automation", titleAr:"أتمتة سير العمل", descEn:"Automate tasks", descAr:"أتمتة المهام", media:"assets/images/demo4.jpg"}
+      {catEn:"Automation", catAr:"الأتمتة", titleEn:"Workflow Automation", titleAr:"أتمتة سير العمل", descEn:"Automate tasks", descAr:"أتمتة المهام", media:"assets/images/demo4.jpg"},
+      {catEn:"Power fgfggf", catAr:"Power BI", titleEn:"Sales Dashboard", titleAr:"لوحة متابعة المبيعات", descEn:"Interactive dashboards", descAr:"لوحات تفاعلية", media:"assets/images/demo2.jpg"},
+
+
     ];
     localStorage.setItem("projects", JSON.stringify(projects));
   }
+
 
   // عرض المشاريع
   function renderProjects() {
@@ -43,12 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
     switchLang(); // لتحديث اللغة
   }
 
+
   // Admin Modal Events
   adminBtn.addEventListener("click", ()=> modal.style.display="flex");
   cancelBtn.addEventListener("click", ()=> modal.style.display="none");
-saveBtn.addEventListener("click", () => {
-  // التحقق من وجود العنوان و الرابط
+
   
+saveBtn.addEventListener("click", () => {
 
   const newProject = {
     catEn: catEnInput.value || "Category",

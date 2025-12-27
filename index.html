@@ -43,6 +43,8 @@
   <nav class="nav-links">
     <a href="#services" data-en="Services" data-ar="خدماتنا">Services</a>
   <a href="portfolio.html" data-en="Our Work" data-ar="أعمالنا">Our Work</a>
+    <a href="works.html" data-en=" Work" data-ar="اعمال سابقة">Our Work</a>
+
       <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
   </nav>
   <button id="langToggle">AR</button>
@@ -155,5 +157,26 @@
 </footer>
 
 <script src="js/lang.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCxfpdlFq4EcTc6VfAM26V6Z3ACVuRdank",
+    authDomain: "smartops-d24c5.firebaseapp.com",
+    databaseURL: "https://smartops-d24c5-default-rtdb.firebaseio.com",
+    projectId: "smartops-d24c5",
+    storageBucket: "smartops-d24c5.firebasestorage.app",
+    messagingSenderId: "923876929462",
+    appId: "1:923876929462:web:6039881f65607766c91b17"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+
 </body>
 </html>
