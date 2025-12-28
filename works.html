@@ -7,11 +7,11 @@
 <style>
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family: Arial,sans-serif; background:#f5f6fa; color:#333; line-height:1.6; padding:20px; }
-.portfolio-header { display:flex; justify-content:space-between; align-items:center; padding:20px; background:#443e63; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); margin-bottom:30px; }
-.portfolio-header h1 { font-size:28px; color:#fff; }
+.portfolio-header { display:flex; justify-content:space-between; align-items:center; padding:20px; background:#f1f0f7; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); margin-bottom:30px; }
+.portfolio-header h1 { font-size:28px; color:#0e0d0d;text-align: center;   margin-left:840px;     /* ده اللي بيوسّط */
+  width: fit-content; /* مهم */}
 .portfolio-header button { padding:8px 16px; border:none; border-radius:6px; cursor:pointer; margin-left:5px; transition:0.3s; color:#fff; }
 #adminBtn { background:#2f2e75; } #adminBtn:hover { background:#553fb9; }
-#langToggle { background:#2196F3; } #langToggle:hover { background:#1976D2; }
 
 #portfolioWrapper {
   display: grid;
@@ -42,15 +42,126 @@ body { font-family: Arial,sans-serif; background:#f5f6fa; color:#333; line-heigh
 #cancelBtn { background:#f44336; } #cancelBtn:hover { background:#e53935; }
 
 @media(max-width:768px){ #portfolioWrapper{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));} .project-card img{height:150px;} }
+
+
+/*header..*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  background: #0a2540;
+  color: #fff;
+  position: sticky; /* يبقى ثابت عند التمرير */
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+header .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+header .nav-links a:hover {
+  color: #2dd4bf;
+}
+
+button#langToggle {
+  background: #2dd4bf;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+button {
+  background: #2dd4bf;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #1c0880;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.main-header h1 {
+  color: #fff;
+  font-size: 22px;
+}
+
+.nav-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+.logo-link {
+  text-decoration: none;   /* يشيل الخط */
+  color: #fff;             /* يخليها أبيض */
+}
+
+.logo-link h1 {
+  color: #fff;             /* تأكيد اللون */
+  margin: 0;
+  cursor: pointer;
+}
+
 </style>
 </head>
 <body>
+
+<header>
+  <div class="logo">
+      <a href="index.html" class="logo-link">
+    <h1>SmartOps</h1>
+    </a>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html#services" data-en="Services" data-ar="خدماتنا">Services</a>
+    <a href="works.html" data-en=" Work" data-ar="اعمال سابقة">Our Work</a>
+
+      <a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+  </nav>
+  <button id="langToggle">AR</button>
+</header>
 
 <div class="portfolio-header">
   <h1 data-en="Our Projects" data-ar="أعمالنا"></h1>
   <div>
     <button id="adminBtn">Add Project</button>
-    <button id="langToggle">AR</button>
   </div>
 </div>
 
@@ -189,6 +300,7 @@ function renderFromFirebase() {
 
 
 </script>
+
 
 </body>
 </html>
